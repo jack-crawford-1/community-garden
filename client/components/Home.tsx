@@ -1,11 +1,20 @@
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 function Home() {
   return (
     <>
       <div>
         <h1>Home page</h1>
-        <Link to={'/users'}>All Users</Link>
+        <ul>
+          <li>
+            <NavLink to={'/users'}>All Users</NavLink>
+          </li>
+
+          <li>
+            {' '}
+            <NavLink to={'/map'}>Map</NavLink>
+          </li>
+        </ul>
       </div>
     </>
   )

@@ -1,4 +1,4 @@
-import Users from './AllUsers.tsx'
+import { Outlet } from 'react-router-dom'
 
 function App() {
   return (
@@ -6,7 +6,7 @@ function App() {
       <div className="app">
         <h1>Community Gardens</h1>
       </div>
-      <Users />
+      <Outlet />
     </>
   )
 }

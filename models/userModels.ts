@@ -4,3 +4,9 @@ export interface User {
   userName: string
   location: string
 }
+
+export interface NewUser {
+  name: string
+  userName: string
+  location: string
+}

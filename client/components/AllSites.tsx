@@ -3,7 +3,7 @@ import { useMutation, useQueryClient } from '@tanstack/react-query'
 import * as api from '../apis/sites.ts'
 import { Link } from 'react-router-dom'
 import { useSites } from '../hooks/useSites.ts'
-import AddSite from './AddSite.tsx'
+import AddSite from './forms/AddSite.tsx'
 
 function AllSites() {
   const { data, isLoading, isError, error } = useSites()

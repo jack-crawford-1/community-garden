@@ -7,11 +7,11 @@ import {
 import App from './components/App'
 import AllUsers from './components/AllUsers'
 import Home from './components/Home'
-import MapPage from './components/MapPage'
-import Location from './components/AddSite'
-import AddUser from './components/AddUser'
+import MapPage from './components/map/MapPage'
+import Location from './components/forms/AddSite'
+import AddUser from './components/forms/AddUser'
 import AllSites from './components/AllSites'
-import AddSite from './components/AddSite'
+import AddSite from './components/forms/AddSite'
 
 const router = createBrowserRouter(
   createRoutesFromElements([

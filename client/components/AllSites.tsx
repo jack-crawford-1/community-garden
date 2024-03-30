@@ -29,6 +29,7 @@ function AllSites() {
       <table className="user-list">
         <thead>
           <tr>
+            <th>ID</th>
             <th>LatLong</th>
             <th>Address</th>
             <th>Description</th>
@@ -41,6 +42,7 @@ function AllSites() {
           {data &&
             data.map((site) => (
               <tr key={site.id}>
+                <td>{site.id}</td>
                 <td>{site.latlong}</td>
                 <td>{site.address}</td>
                 <td>{site.description}</td>
@@ -48,10 +50,10 @@ function AllSites() {
                 <td>{site.parking}</td>
                 <td>{site.aceessible}</td>
                 <td>
-                  {/* <button
+                  <button
                     onClick={() => handleDelete(site.id)}
                     className="delete-button"
-                  ></button> */}
+                  ></button>
                 </td>
               </tr>
             ))}

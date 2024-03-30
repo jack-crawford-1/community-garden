@@ -1,5 +1,5 @@
 import request from 'superagent'
-import { Sites } from '../../models/sitesModels'
+import { NewSite, Sites } from '../../models/sitesModels'
 
 const rootUrl = '/api/v1'
 
@@ -15,6 +15,6 @@ export const deleteSite = async (id: number) => {
   await request.delete(`${rootUrl}/sites/${id}`)
 }
 
-export const addSite = async (newSite: Sites) => {
-  await request.post(`${rootUrl}/sites`).send(newSite)
+export const addSite = async (newSite: NewSite) => {
+  await request.post(`${rootUrl}/sites/`).send(newSite)
 }

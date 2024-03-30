@@ -2,6 +2,7 @@ import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { useUsers } from '../hooks/useUsers.ts'
 import * as api from '../apis/users.ts'
 import { Link } from 'react-router-dom'
+import AddUser from './AddUser.tsx'
 
 function AllUsers() {
   const { data, isLoading, isError, error } = useUsers()
@@ -28,6 +29,7 @@ function AllUsers() {
       <table className="user-list">
         <thead>
           <tr>
+            <th>ID</th>
             <th>Name</th>
             <th>Username</th>
             <th>Location</th>
@@ -38,6 +40,7 @@ function AllUsers() {
           {data &&
             data.map((user) => (
               <tr key={user.id}>
+                <td>{user.id}</td>
                 <td>{user.name}</td>
                 <td>{user.userName}</td>
                 <td>{user.location}</td>
@@ -52,6 +55,7 @@ function AllUsers() {
         </tbody>
       </table>
       <Link to={'/'}>Home</Link>
+      <AddUser />
     </div>
   )
 }

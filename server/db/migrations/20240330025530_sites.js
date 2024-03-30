@@ -8,8 +8,6 @@ export async function up(knex) {
     table.string('latlong')
     table.string('address')
     table.string('description')
-    table.boolean('parking')
-    table.boolean('aceessible')
   })
 }
 

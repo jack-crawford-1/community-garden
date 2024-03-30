@@ -3,6 +3,7 @@ import { useMutation, useQueryClient } from '@tanstack/react-query'
 import * as api from '../apis/sites.ts'
 import { Link } from 'react-router-dom'
 import { useSites } from '../hooks/useSites.ts'
+import AddSite from './AddSite.tsx'
 
 function AllSites() {
   const { data, isLoading, isError, error } = useSites()
@@ -33,9 +34,7 @@ function AllSites() {
             <th>LatLong</th>
             <th>Address</th>
             <th>Description</th>
-            <th>UserID</th>
-            <th>Parking</th>
-            <th>accessable</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody>
@@ -46,12 +45,9 @@ function AllSites() {
                 <td>{site.latlong}</td>
                 <td>{site.address}</td>
                 <td>{site.description}</td>
-                <td>{site.userId}</td>
-                <td>{site.parking}</td>
-                <td>{site.aceessible}</td>
                 <td>
                   <button
-                    onClick={() => handleDelete(site.id)}
+                    onClick={() => handleDelete(site.id!)}
                     className="delete-button"
                   ></button>
                 </td>
@@ -59,7 +55,7 @@ function AllSites() {
             ))}
         </tbody>
       </table>
-      <Link to={'/'}>Home</Link>
+      <AddSite />
     </div>
   )
 }

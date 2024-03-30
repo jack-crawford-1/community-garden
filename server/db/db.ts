@@ -1,6 +1,6 @@
 import connection from './connection.ts'
 import { NewUser, User } from '../../models/userModels.ts'
-import { Sites } from '../../models/sitesModels.ts'
+import { NewSite, Sites } from '../../models/sitesModels.ts'
 
 const db = connection
 
@@ -19,6 +19,10 @@ export async function deleteUser(id: number): Promise<User> {
 
 export const getAllSites = (): Promise<Sites[]> => {
   return db<Sites>('sites').select('*')
+}
+
+export async function addSite(newSite: NewSite): Promise<Sites[]> {
+  return await db('sites').insert(newSite).returning('*')
 }
 
 export const deleteSite = async (id: number): Promise<Sites> => {

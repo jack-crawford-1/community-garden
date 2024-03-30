@@ -9,6 +9,7 @@ function AddSite() {
   const [address, setAddress] = useState('')
   const [description, setDescription] = useState('')
   const [councilId, setCouncilId] = useState('')
+  const [userId, setUserId] = useState('')
   const [isPublic, setIsPublic] = useState('')
   const [hasWaterAccess, setHasWaterAccess] = useState('')
   const [isAvailable, setIsAvailable] = useState('')
@@ -38,6 +39,10 @@ function AddSite() {
     event: React.ChangeEvent<HTMLInputElement>,
   ) => {
     setCouncilId(event.target.value)
+  }
+
+  const handleUserIdChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setUserId(event.target.value)
   }
 
   const handleIsPublicChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -81,6 +86,7 @@ function AddSite() {
       address: address,
       description: description,
       councilId: parseInt(councilId),
+      userId: 0,
       isPublic: isPublic === 'true',
       hasWaterAccess: hasWaterAccess === 'true',
       isAvailable: isAvailable === 'true',
@@ -88,7 +94,6 @@ function AddSite() {
       soilType: soilType,
       size: parseInt(size),
       accessibility: accessibility,
-      userId: 0,
     }
     createMutation.mutate(newSiteData)
     Promise<NewSite>
@@ -96,6 +101,7 @@ function AddSite() {
     setAddress('')
     setDescription('')
     setCouncilId('')
+    setUserId('')
     setIsPublic('')
     setHasWaterAccess('')
     setIsAvailable('')
@@ -142,6 +148,16 @@ function AddSite() {
             id="councilId"
             name="councilId"
           />
+
+          <label htmlFor="userId">User ID</label>
+          <input
+            value={councilId}
+            onChange={handleUserIdChange}
+            type="text"
+            id="userID"
+            name="userID"
+          />
+
           <label htmlFor="IsPubluc">Is Public</label>
           <input
             value={isPublic}

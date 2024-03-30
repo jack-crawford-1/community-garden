@@ -3,7 +3,10 @@ export interface Sites {
   latlong: string
   address: string
   description: string
-  userId: number
-  parking: boolean
-  aceessible: boolean
+}
+
+export interface NewSite {
+  latlong: string
+  address: string
+  description: string
 }

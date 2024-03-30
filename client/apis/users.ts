@@ -14,3 +14,7 @@ export const getUsers = async (): Promise<User[]> => {
 export const deleteUser = async (id: number) => {
   await request.delete(`${rootUrl}/users/${id}`)
 }
+
+export const addUser = async (newUser: User) => {
+  await request.post(`${rootUrl}/users`).send(newUser)
+}

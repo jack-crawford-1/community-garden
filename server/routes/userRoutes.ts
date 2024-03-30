@@ -26,8 +26,17 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
-    const { name, userName, location } = req.body
-    await db.addUser({ name, userName, location })
+    const { name, userName, email, password, location, updatedAt, createdAt } =
+      req.body
+    await db.addUser({
+      name,
+      userName,
+      email,
+      password,
+      location,
+      createdAt,
+      updatedAt,
+    })
     res.json(`Welcome ${name}`)
   } catch (error) {
     res.status(500).json({ message: 'there was a server error' })

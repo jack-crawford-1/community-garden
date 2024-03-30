@@ -10,6 +10,7 @@ import Home from './components/Home'
 import MapPage from './components/MapPage'
 import Location from './components/Location'
 import AddUser from './components/AddUser'
+import AllSites from './components/AllSites'
 
 const router = createBrowserRouter(
   createRoutesFromElements([
@@ -19,6 +20,7 @@ const router = createBrowserRouter(
       <Route path="/adduser/" element={<AddUser />} />
       <Route path="/map/" element={<MapPage />} />
       <Route path="/location/" element={<Location />} />
+      <Route path="/sites/" element={<AllSites />} />
     </Route>,
   ]),
 )

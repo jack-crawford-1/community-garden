@@ -1,17 +1,239 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap');
 
-html, 
-body {
+html, body {
   font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  // background-color: #000000b3;
+}
+
+/* Homepage Styles */
+.home-container {
+  text-align: center;
+  padding-top: 2rem;
+  background-image: url('/client/public/images/homepage/bg1.jpeg'); 
+  background-size: cover;
+  background-position: center;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative; 
 }
 
 
-.delete-button {
-  background: url('../public/images/icons/del.png') no-repeat center center;
-  background-size: contain;
-  width: 20px; 
-  height: 20px;
+// OVERLAY TO DARKEN HOMEPAGE
+.home-container::before {
+  content: ""; 
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #0000003f;
+}
+
+.home-container > * {
+  position: relative;
+  z-index: 1;
+}
+
+.app h1 {
+  font-size: 2.5rem;
+  width: 100%;
+  color: #333;
+  // color: #ededed;
+  margin: 0;
+  // background-color: #ffffffb3; 
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px #0000001a;
+}
+
+.home-container p {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 0;
+  background-color: #ffffffda; 
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px #0000001a;
+  width: 50%;
+}
+
+.home-container ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 2rem 0; 
+}
+
+.home-container li {
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.home-container li:hover {
+  transform: scale(1.05); 
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  display: inline-block;
+  margin: 0 1rem; 
+}
+
+
+.nav-button {
+  display: inline-block;
+  background-color: #000000b3; 
+  background-color: #3b6bb4;
+  width: 190px;
+  height: 50px;
   border: none;
+  border-radius: 15px; 
   cursor: pointer;
-  padding: 0; 
+  padding: 0;
+  margin: 15px;
+  line-height: 30px;
+  text-align: center;
+  color: white;
+  
+}
+
+.nav-button:hover {
+  background-color: #000000b3; 
+}
+
+
+/* User List Styles */
+
+.user-list {
+  margin: 2rem auto;
+  max-width: 800px;
+  background-color: #fff;
+  border-collapse: collapse;
+  width: 100%;
+  box-shadow: 0 2px 5px #00000033;
+  
+}
+
+.ulh2 {
+  text-align: center;
+  margin: 1rem 0;
+  // color: white
+}
+
+.user-list th,
+.user-list td {
+  text-align: left;
+  padding: 12px 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.user-list th {
+  background-color: #4c74af;
+  color: white;
+}
+
+.user-list tr:hover {
+  background-color: #f5f5f5;
+}
+
+.user-list .delete-button {
+  display: inline-block;
+  background-color: #f44336;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 15px; 
+  cursor: pointer;
+  padding: 0;
+  line-height: 30px;
+  text-align: center;
+  color: white;
+  font-size: 16px;
+}
+
+.user-list .delete-button:hover {
+  background-color: #d32f2f;
+}
+
+.user-list .delete-button:before {
+  content: "×"; 
+}
+
+@media (max-width: 768px) {
+  .user-list {
+    width: auto;
+    margin: 1rem;
+  }
+
+  .user-list th,
+  .user-list td {
+    padding: 8px 10px;
+  }
+}
+
+/* User Form Styles */
+
+.add-user-container {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px #00000033;
+}
+
+.add-user-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.add-user-container form {
+  display: grid;
+  grid-gap: 1rem;
+}
+
+.add-user-container label {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.add-user-container input {
+  font-size: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.add-user-container button[type="submit"] {
+  font-size: 1rem;
+  color: white;
+  background-color: #4c74af;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-user-container button[type="submit"]:hover {
+  background-color: #1f57ab;
+}
+
+@media (max-width: 768px) {
+  .add-user-container {
+    width: auto;
+    margin: 1rem;
+    padding: 1rem;
+  }
 }

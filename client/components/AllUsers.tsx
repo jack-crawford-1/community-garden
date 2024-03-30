@@ -2,6 +2,7 @@ import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { useUsers } from '../hooks/useUsers.ts'
 import * as api from '../apis/users.ts'
 import { Link } from 'react-router-dom'
+import AddUser from './AddUser.tsx'
 
 function AllUsers() {
   const { data, isLoading, isError, error } = useUsers()
@@ -24,8 +25,8 @@ function AllUsers() {
 
   return (
     <div>
-      <h2>Admin Page: Show all users</h2>
-      <table>
+      <h2 className="ulh2">Admin Page: Show all users</h2>
+      <table className="user-list">
         <thead>
           <tr>
             <th>Name</th>

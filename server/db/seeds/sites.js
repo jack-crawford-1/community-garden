@@ -9,8 +9,8 @@ export async function seed(knex) {
     {
       id: 1,
       latlong: '40.7128,-74.0060',
-      address: '123 Green St, New York',
-      description: 'Community garden downtown',
+      address: '12 Barnard St, Wadestown',
+      description: 'Community garden in Wadestown',
       councilId: 1,
       userId: 1,
       isPublic: true,

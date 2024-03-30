@@ -8,7 +8,6 @@ import App from './components/App'
 import AllUsers from './components/AllUsers'
 import Home from './components/Home'
 import MapPage from './components/map/MapPage'
-import Location from './components/forms/AddSite'
 import AddUser from './components/forms/AddUser'
 import AllSites from './components/AllSites'
 import AddSite from './components/forms/AddSite'
@@ -23,10 +22,9 @@ const router = createBrowserRouter(
       <Route path="/users/:id" element={<User />} />
       <Route path="/adduser/" element={<AddUser />} />
       <Route path="/map/" element={<MapPage />} />
-      <Route path="/location/" element={<Location />} />
       <Route path="/sites/" element={<AllSites />} />
-      <Route path="/addsite/" element={<AddSite />} />
       <Route path="/sites/:id" element={<Site />} />
+      <Route path="/addsite/" element={<AddSite />} />
     </Route>,
   ]),
 )

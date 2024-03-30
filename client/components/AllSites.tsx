@@ -55,7 +55,7 @@ function AllSites() {
             ))}
         </tbody>
       </table>
-      <AddSite />
+      {/* <AddSite /> */}
     </div>
   )
 }

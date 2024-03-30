@@ -12,17 +12,21 @@ import Location from './components/forms/AddSite'
 import AddUser from './components/forms/AddUser'
 import AllSites from './components/AllSites'
 import AddSite from './components/forms/AddSite'
+import Site from './components/Site'
+import User from './components/User'
 
 const router = createBrowserRouter(
   createRoutesFromElements([
     <Route path="/" element={<App />}>
       <Route index element={<Home />} />
       <Route path="/users/" element={<AllUsers />} />
+      <Route path="/users/:id" element={<User />} />
       <Route path="/adduser/" element={<AddUser />} />
       <Route path="/map/" element={<MapPage />} />
       <Route path="/location/" element={<Location />} />
       <Route path="/sites/" element={<AllSites />} />
       <Route path="/addsite/" element={<AddSite />} />
+      <Route path="/sites/:id" element={<Site />} />
     </Route>,
   ]),
 )

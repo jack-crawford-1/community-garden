@@ -9,6 +9,10 @@ export const getAllUsers = () => {
   return allUsers
 }
 
+export const getUserById = async (id: number): Promise<User | undefined> => {
+  return db<User>('users').where('id', id).first()
+}
+
 export async function addUser(newUser: NewUser): Promise<NewUser[]> {
   return await db('users').insert(newUser).returning('*')
 }
@@ -19,6 +23,10 @@ export async function deleteUser(id: number): Promise<User> {
 
 export const getAllSites = (): Promise<Sites[]> => {
   return db<Sites>('sites').select('*')
+}
+
+export const getSiteById = async (id: number): Promise<Sites | undefined> => {
+  return db<Sites>('sites').where('id', id).first()
 }
 
 export async function addSite(newSite: NewSite): Promise<Sites[]> {

@@ -18,3 +18,11 @@ export const deleteUser = async (id: number) => {
 export const addUser = async (newUser: User) => {
   await request.post(`${rootUrl}/users`).send(newUser)
 }
+
+export const getUserById = async (id: number): Promise<User> => {
+  const res = await request.get(`${rootUrl}/users/${id}`)
+  if (res.ok) {
+    return res.body.user
+  }
+  throw new Error(res.text)
+}

@@ -11,6 +11,14 @@ export const getSites = async (): Promise<Sites[]> => {
   throw new Error(res.text)
 }
 
+export const getSiteById = async (id: number): Promise<Sites> => {
+  const res = await request.get(`${rootUrl}/sites/${id}`)
+  if (res.ok) {
+    return res.body.site
+  }
+  throw new Error(res.text)
+}
+
 export const deleteSite = async (id: number) => {
   await request.delete(`${rootUrl}/sites/${id}`)
 }

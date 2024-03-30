@@ -14,6 +14,16 @@ router.get('/', async (req, res) => {
   }
 })
 
+router.get('/:id', async (req, res) => {
+  try {
+    const id = Number(req.params.id)
+    const user = await db.getUserById(id)
+    res.json({ user })
+  } catch (error) {
+    res.status(500).json({ message: 'there was a server error' })
+  }
+})
+
 router.post('/', async (req, res) => {
   try {
     const { name, userName, location } = req.body

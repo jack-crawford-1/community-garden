@@ -31,7 +31,6 @@ function AllSites() {
         <thead>
           <tr>
             <th>ID</th>
-            <th>LatLong</th>
             <th>Address</th>
             <th>Description</th>
             <th>Delete</th>
@@ -41,8 +40,9 @@ function AllSites() {
           {data &&
             data.map((site) => (
               <tr key={site.id}>
-                <td>{site.id}</td>
-                <td>{site.latlong}</td>
+                <td>
+                  <Link to={`/sites/${site.id}`}>{site.id}</Link>
+                </td>
                 <td>{site.address}</td>
                 <td>{site.description}</td>
                 <td>

@@ -14,6 +14,17 @@ router.get('/', async (req, res) => {
   }
 })
 
+router.get('/:id', async (req, res) => {
+  try {
+    const id = Number(req.params.id)
+    const site = await db.getSiteById(id)
+    res.json({ site })
+  } catch (err) {
+    console.error(`No good! ${err}`)
+    res.sendStatus(500)
+  }
+})
+
 router.post('/', async (req, res) => {
   try {
     const { latlong, address, description } = req.body

@@ -21,7 +21,7 @@ export function useCustomQueryClient() {
 export function useCreateMutation() {
   const queryClient = useCustomQueryClient()
   const createMutation = useMutation({
-    mutationFn: (newSite: Sites) => api.addSites(newSite),
+    mutationFn: (newSite: Sites) => api.addSite(newSite),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['sites'] })
     },

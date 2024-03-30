@@ -1,6 +1,6 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 
-import * as api from '../apis/users.ts'
+import * as api from '../apis/sites.ts'
 import { Link } from 'react-router-dom'
 import { useSites } from '../hooks/useSites.ts'
 
@@ -9,7 +9,7 @@ function AllSites() {
   const queryClient = useQueryClient()
 
   const delMutation = useMutation({
-    mutationFn: (id: number) => api.deleteUser(id),
+    mutationFn: (id: number) => api.deleteSite(id),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['sites'] })
     },

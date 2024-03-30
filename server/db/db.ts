@@ -20,3 +20,7 @@ export async function deleteUser(id: number): Promise<User> {
 export const getAllSites = (): Promise<Sites[]> => {
   return db<Sites>('sites').select('*')
 }
+
+export const deleteSite = async (id: number): Promise<Sites> => {
+  return db('sites').where('id', id).del()
+}

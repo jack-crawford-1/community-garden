@@ -14,4 +14,14 @@ router.get('/', async (req, res) => {
   }
 })
 
+router.delete('/:id', async (req, res) => {
+  try {
+    const id = Number(req.params.id)
+    await db.deleteSite(id)
+    res.json(`site ${id} deleted`)
+  } catch (error) {
+    res.status(500).json({ message: 'there was a server error' })
+  }
+})
+
 export default router

@@ -2,7 +2,6 @@ import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { useUsers } from '../hooks/useUsers.ts'
 import * as api from '../apis/users.ts'
 import { Link } from 'react-router-dom'
-import AddUser from './AddUser.tsx'
 
 function AllUsers() {
   const { data, isLoading, isError, error } = useUsers()

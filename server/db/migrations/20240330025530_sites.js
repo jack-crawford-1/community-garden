@@ -8,10 +8,8 @@ export async function up(knex) {
     table.string('latlong')
     table.string('address')
     table.string('description')
-    table.integer('userId')
     table.boolean('parking')
     table.boolean('aceessible')
-    table.integer('userId').references('users.id')
   })
 }
 

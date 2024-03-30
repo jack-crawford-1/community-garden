@@ -11,6 +11,10 @@ export const getSites = async (): Promise<Sites[]> => {
   throw new Error(res.text)
 }
 
-export const addSites = async (newSite: Sites) => {
+export const deleteSite = async (id: number) => {
+  await request.delete(`${rootUrl}/sites/${id}`)
+}
+
+export const addSite = async (newSite: Sites) => {
   await request.post(`${rootUrl}/sites`).send(newSite)
 }

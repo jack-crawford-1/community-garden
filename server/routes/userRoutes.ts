@@ -28,7 +28,7 @@ router.delete('/:id', async (req, res) => {
   try {
     const id = Number(req.params.id)
     await db.deleteUser(id)
-    res.json(`todo ${id} deleted`)
+    res.json(`User ${id} deleted`)
   } catch (error) {
     res.status(500).json({ message: 'there was a server error' })
   }

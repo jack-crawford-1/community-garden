@@ -44,7 +44,9 @@ function AllUsers() {
           {data &&
             data.map((user) => (
               <tr key={user.id}>
-                <td>{user.id}</td>
+                <td>
+                  <Link to={`/users/${user.id}`}>{user.id}</Link>
+                </td>
                 <td>{user.name}</td>
                 <td>{user.userName}</td>
                 <td>{user.email}</td>

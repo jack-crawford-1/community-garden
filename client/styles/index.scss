@@ -125,6 +125,19 @@ html, body {
   margin: 0 1rem; 
   }
 
+  .sign-in {
+    background-color: #5e93de;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 0.55rem 1.1rem;
+    cursor: pointer;
+  }
+
+  .sign-in:hover {
+    background-color: #4c74af;
+  }
+
   .home {
     background-color: #ffffff;
   }

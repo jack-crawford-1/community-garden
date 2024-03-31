@@ -16,11 +16,15 @@ function Nav() {
     <>
       <div>
         <IfAuthenticated>
-          <button onClick={handleSignOut}>Sign out</button>
+          <button className="sign-in" onClick={handleSignOut}>
+            Sign out
+          </button>
           {user && <p>Signed in as: {user?.given_name}</p>}
         </IfAuthenticated>
         <IfNotAuthenticated>
-          <button onClick={handleSignIn}>Sign in</button>
+          <button className="sign-in" onClick={handleSignIn}>
+            Sign in
+          </button>
         </IfNotAuthenticated>
       </div>
     </>

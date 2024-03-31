@@ -15,12 +15,12 @@ function App() {
           </li>
           <li>
             <NavLink className="nav-link" to={'/sites'}>
-              Sites List
+              Sites
             </NavLink>
           </li>
           <li>
             <NavLink className="nav-link" to={'/users'}>
-              Users List
+              Users
             </NavLink>
           </li>
           <li>
@@ -30,7 +30,7 @@ function App() {
           </li>
           <li>
             <NavLink className="nav-link" to={'/adduser'}>
-              Sign up
+              Register
             </NavLink>
           </li>
           <Nav />

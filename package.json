@@ -26,11 +26,13 @@
     ]
   },
   "dependencies": {
+    "@auth0/auth0-react": "^2.2.4",
     "express": "^4.17.2",
     "knex": "^2.5.1",
     "leaflet": "^1.9.4",
     "react-query": "^3.39.3",
     "sqlite3": "^5.1.6",
+    "styled-components": "^6.1.8",
     "superagent": "^8.1.2"
   },
   "devDependencies": {

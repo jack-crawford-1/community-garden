@@ -1,4 +1,5 @@
 import { NavLink, Outlet } from 'react-router-dom'
+import Nav from './auth/Nav'
 function App() {
   return (
     <div className="app">
@@ -32,8 +33,10 @@ function App() {
               Sign up
             </NavLink>
           </li>
+          <Nav />
         </ul>
       </div>
+
       <Outlet />
     </div>
   )

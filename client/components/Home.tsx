@@ -45,6 +45,13 @@ function Home() {
             </NavLink>
           </li>
         </button>
+        <button className="nav-button">
+          <li>
+            <NavLink className="nav-link" to={'/councils/'}>
+              Councils
+            </NavLink>
+          </li>
+        </button>
       </ul>
     </div>
   )

@@ -5,7 +5,6 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  // background-color: #000000b3;
 }
  
 
@@ -37,17 +36,6 @@ html, body {
   font-weight: bold;
   color: #333;
 }
-
-a {
-  text-decoration: none;
-  color: #1a5a92;
-  font-weight: bold;
-}
-
-a:hover {
-  color: #2a7ae2;
-}
-
 
 .user-list thead tr {
   background-color: #0044cc; 
@@ -99,18 +87,56 @@ a:hover {
   z-index: 1;
 }
 
+.title-and-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+}
+
+.app {
+  display: block;
+  padding: 0.5rem 1rem;
+}
+
 .app h1 {
   font-size: 2.5rem;
-  width: 100%;
-  color: #333;
-  // color: #ededed;
   margin: 0;
-  // background-color: #ffffffb3; 
-  display: inline-block;
+  padding-right: 1rem; 
+  color: #5e93de;
+}
+
+.navigation {
+  list-style: none;
+  display: flex;
+  gap: 1rem; 
+  padding: 0;
+  margin: 0;
+}
+
+.nav-link {
+  color: #000;
   padding: 0.5rem 1rem;
   border-radius: 10px;
-  box-shadow: 0 4px 8px #0000001a;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 0.75rem 1.5rem;
+  display: inline-block;
+  margin: 0 1rem; 
+  }
+
+  .home {
+    background-color: #ffffff;
+  }
+
+  .home:hover {
+    background-color: white!important;
+  }
+
+
+.nav-link:hover {
+  background-color: #5e93de;
 }
+
 
 .home-container p {
   font-size: 1.5rem;
@@ -139,36 +165,6 @@ a:hover {
   transform: scale(1.05); 
 }
 
-.nav-link {
-  text-decoration: none;
-  font-size: 1.5rem;
-  color: #fff;
-  padding: 0.75rem 1.5rem;
-  display: inline-block;
-  margin: 0 1rem; 
-}
-
-
-.nav-button {
-  display: inline-block;
-  background-color: #000000b3; 
-  background-color: #3b6bb4;
-  width: 190px;
-  height: 50px;
-  border: none;
-  border-radius: 15px; 
-  cursor: pointer;
-  padding: 0;
-  margin: 15px;
-  line-height: 30px;
-  text-align: center;
-  color: white;
-  
-}
-
-.nav-button:hover {
-  background-color: #000000b3; 
-}
 
 
 /* User List Styles */
@@ -305,3 +301,20 @@ a:hover {
   }
 }
 
+
+@media (max-width: 768px) {
+  .title-and-nav {
+    flex-direction: column;
+  }
+
+  .app h1 {
+    font-size: 2rem;
+    text-align: center; 
+    padding-bottom: 0.5rem; 
+  }
+
+  .navigation {
+    flex-direction: column; 
+    gap: 0.5rem; 
+  }
+}

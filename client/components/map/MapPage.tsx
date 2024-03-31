@@ -92,7 +92,6 @@ function MapPage() {
   return (
     <div>
       <div id="map" style={{ height: '700px' }}></div>
-      <Link to={'/'}>Home</Link>
     </div>
   )
 }

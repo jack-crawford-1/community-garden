@@ -135,7 +135,6 @@ function AddUser() {
           <button type="submit">Add User</button>
         </form>
       </div>
-      <Link to={'/'}>Home</Link>
     </div>
   )
 }

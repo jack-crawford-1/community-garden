@@ -13,6 +13,8 @@ import AllSites from './components/AllSites'
 import AddSite from './components/forms/AddSite'
 import Site from './components/Site'
 import User from './components/User'
+import CouncilById from './components/Council'
+import AllCouncils from './components/AllCouncils'
 
 const router = createBrowserRouter(
   createRoutesFromElements([
@@ -25,6 +27,8 @@ const router = createBrowserRouter(
       <Route path="/sites/" element={<AllSites />} />
       <Route path="/sites/:id" element={<Site />} />
       <Route path="/addsite/" element={<AddSite />} />
+      <Route path="/councils/" element={<AllCouncils />} />
+      <Route path="/councils/:id" element={<CouncilById />} />
     </Route>,
   ]),
 )

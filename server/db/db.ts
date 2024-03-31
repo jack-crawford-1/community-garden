@@ -1,6 +1,7 @@
 import connection from './connection.ts'
 import { NewUser, User } from '../../models/userModels.ts'
 import { NewSite, Sites } from '../../models/sitesModels.ts'
+import { Councils } from '../../models/councilsModels.ts'
 
 const db = connection
 
@@ -35,4 +36,14 @@ export async function addSite(newSite: NewSite): Promise<Sites[]> {
 
 export const deleteSite = async (id: number): Promise<Sites> => {
   return db('sites').where('id', id).del()
+}
+
+export const getCouncils = async (): Promise<Councils[]> => {
+  return db<Councils>('councils').select('*')
+}
+
+export const getCouncilById = async (
+  id: number,
+): Promise<Councils | undefined> => {
+  return db<Councils>('councils').where('id', id).first()
 }

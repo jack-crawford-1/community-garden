@@ -3,7 +3,7 @@ function Home() {
     <div className="home-container">
       <p>
         A web app to find and share potential locations and resources for
-        community/ urban gardens.
+        community and urban gardens.
       </p>
     </div>
   )

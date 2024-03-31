@@ -27,7 +27,11 @@ function App() {
               Councils
             </NavLink>
           </li>
-          {/* Add additional links here if needed */}
+          <li>
+            <NavLink className="nav-link" to={'/adduser'}>
+              Sign up
+            </NavLink>
+          </li>
         </ul>
       </div>
       <Outlet />

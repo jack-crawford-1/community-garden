@@ -23,7 +23,7 @@ function AllCouncils() {
 
   return (
     <div>
-      <h2 className="ulh2">Admin Page: Show all users</h2>
+      <h2 className="ulh2">Show all councils</h2>
       <table className="user-list">
         <thead>
           <tr>
@@ -60,7 +60,6 @@ function AllCouncils() {
             ))}
         </tbody>
       </table>
-      <Link to={'/'}>Home</Link>
     </div>
   )
 }

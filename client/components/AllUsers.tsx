@@ -64,8 +64,6 @@ function AllUsers() {
             ))}
         </tbody>
       </table>
-      <Link to={'/'}>Home</Link>
-      {/* <AddUser /> */}
     </div>
   )
 }

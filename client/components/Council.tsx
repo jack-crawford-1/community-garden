@@ -13,10 +13,10 @@ function CouncilById() {
 
   return (
     <div>
-      <h1>Council by ID</h1>
+      <h2>Council by ID</h2>
       <div>
-        <h3>ID: {council.id}</h3>
-        <p>Name: {council.name}</p>
+        <h3>{council.name}</h3>
+        <p>ID: {council.id}</p>
         <p>Email: {council.email}</p>
         <p>Phone: {council.phone}</p>
         <p>Address: {council.address}</p>

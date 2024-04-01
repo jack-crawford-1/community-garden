@@ -2,21 +2,25 @@ import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { useUsers } from '../hooks/useUsers.ts'
 import * as api from '../apis/users.ts'
 import { Link } from 'react-router-dom'
-import AddUser from './forms/AddUser.tsx'
+import { deleteUser } from '../apis/users.ts'
+import { useAuth0 } from '@auth0/auth0-react'
 
 function AllUsers() {
   const { data, isLoading, isError, error } = useUsers()
   const queryClient = useQueryClient()
+  const { getAccessTokenSilently } = useAuth0()
 
   const delMutation = useMutation({
-    mutationFn: (id: number) => api.deleteUser(id),
+    mutationFn: async (id: number) => {
+      const token: string = await getAccessTokenSilently()
+      return deleteUser(id, token)
+    },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['users'] })
     },
   })
 
   const handleDelete = (id: number) => {
-    console.log('delete')
     delMutation.mutate(id)
   }
 

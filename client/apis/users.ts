@@ -11,8 +11,18 @@ export const getUsers = async (): Promise<User[]> => {
   throw new Error(res.text)
 }
 
-export const deleteUser = async (id: number) => {
-  await request.delete(`${rootUrl}/users/${id}`)
+export const deleteUser = async (id: number, token: string) => {
+  const response = await fetch(`${rootUrl}/users/${id}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`,
+    },
+  })
+
+  if (!response.ok) {
+    throw new Error('Error deleting user')
+  }
 }
 
 export const addUser = async (newUser: User) => {

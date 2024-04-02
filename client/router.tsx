@@ -4,9 +4,9 @@ import {
   createRoutesFromElements,
   Route,
 } from 'react-router-dom'
-import App from './components/main/App'
+import App from '../client/components/main/App'
 import AllUsers from './components/users/AllUsers'
-import Home from './components/Home'
+import Home from './components/main/Home'
 import MapPage from './components/map/MapPage'
 import AddUser from './components/form/AddUser'
 import AllSites from './components/sites/AllSites'
@@ -15,7 +15,7 @@ import Site from './components/sites/Site'
 import User from './components/users/User'
 import CouncilById from './components/council/Council'
 import AllCouncils from './components/council/AllCouncils'
-import AddressFromLatLong from './components/map/AddressFromLatLong'
+import AddressFromLatLong from '../client/components/map/AddressFromLatLong'
 
 const router = createBrowserRouter(
   createRoutesFromElements([

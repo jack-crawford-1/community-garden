@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom'
-import { useSites } from '../hooks/useSites'
+import { useSites } from '../../hooks/useSites'
 import { useQueryClient } from '@tanstack/react-query'
 
 function Site() {

@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom'
 import { useQueryClient } from '@tanstack/react-query'
-import { useUsers } from '../hooks/useUsers'
+import { useUsers } from '../../hooks/useUsers'
 
 function User() {
   const { id } = useParams<{ id: string }>()

@@ -1,5 +1,5 @@
 import { useQueryClient } from '@tanstack/react-query'
-import { useCouncils } from '../hooks/useCouncils.ts'
+import { useCouncils } from '../../hooks/useCouncils.ts'
 import { Link } from 'react-router-dom'
 
 function AllCouncils() {

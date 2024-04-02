@@ -1,8 +1,8 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
-import { useUsers } from '../hooks/useUsers.ts'
-import * as api from '../apis/users.ts'
+import { useUsers } from '../../hooks/useUsers.ts'
+import * as api from '../../apis/users.ts'
 import { Link } from 'react-router-dom'
-import { deleteUser } from '../apis/users.ts'
+import { deleteUser } from '../../apis/users.ts'
 import { useAuth0 } from '@auth0/auth0-react'
 
 function AllUsers() {

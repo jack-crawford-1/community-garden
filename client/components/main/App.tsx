@@ -1,5 +1,5 @@
 import { NavLink, Outlet } from 'react-router-dom'
-import Nav from './auth/Nav'
+import Nav from '../auth/Nav'
 function App() {
   return (
     <div className="app">

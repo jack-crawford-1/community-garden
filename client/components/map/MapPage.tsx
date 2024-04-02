@@ -92,6 +92,7 @@ function MapPage() {
 
     function onMapClick(e: { latlng: L.LatLngExpression }) {
       const latlng = e.latlng
+
       const content = `<div>You clicked ${e.latlng.toString()}</div><button id="go-to-page">Add Garden Site</button>`
 
       popup.setLatLng(latlng).setContent(content).openOn(map)
@@ -127,3 +128,6 @@ function MapPage() {
 }
 
 export default MapPage
+function getReverseGeocodingData(lat: any, lng: any) {
+  throw new Error('Function not implemented.')
+}

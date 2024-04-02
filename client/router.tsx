@@ -4,17 +4,18 @@ import {
   createRoutesFromElements,
   Route,
 } from 'react-router-dom'
-import App from './components/App'
-import AllUsers from './components/AllUsers'
+import App from './components/main/App'
+import AllUsers from './components/users/AllUsers'
 import Home from './components/Home'
 import MapPage from './components/map/MapPage'
-import AddUser from './components/forms/AddUser'
-import AllSites from './components/AllSites'
-import AddSite from './components/forms/AddSite'
-import Site from './components/Site'
-import User from './components/User'
-import CouncilById from './components/Council'
-import AllCouncils from './components/AllCouncils'
+import AddUser from './components/form/AddUser'
+import AllSites from './components/sites/AllSites'
+import AddSite from './components/form/AddSite'
+import Site from './components/sites/Site'
+import User from './components/users/User'
+import CouncilById from './components/council/Council'
+import AllCouncils from './components/council/AllCouncils'
+import AddressFromLatLong from './components/map/AddressFromLatLong'
 
 const router = createBrowserRouter(
   createRoutesFromElements([
@@ -29,6 +30,7 @@ const router = createBrowserRouter(
       <Route path="/addsite/" element={<AddSite />} />
       <Route path="/councils/" element={<AllCouncils />} />
       <Route path="/councils/:id" element={<CouncilById />} />
+      <Route path="/address/" element={<AddressFromLatLong />} />
     </Route>,
   ]),
 )

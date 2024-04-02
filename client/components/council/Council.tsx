@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom'
-import { useCouncils } from '../hooks/useCouncils'
+import { useCouncils } from '../../hooks/useCouncils'
 
 function CouncilById() {
   const { id } = useParams<{ id: string }>()

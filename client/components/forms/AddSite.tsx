@@ -3,6 +3,7 @@ import { useCreateMutation } from '../../hooks/useSites'
 import { useQueryClient } from 'react-query'
 import { Link } from 'react-router-dom'
 import { NewSite, Sites } from '../../../models/sitesModels'
+import { useSearchParams } from 'react-router-dom'
 
 function AddSite() {
   const [latlong, setLatlong] = useState('')
@@ -17,6 +18,9 @@ function AddSite() {
   const [soilType, setSoilType] = useState('')
   const [size, setSize] = useState('')
   const [accessibility, setAccessibility] = useState('')
+  const [searchParams, setSearchParams] = useSearchParams()
+  const defaultLat = searchParams.get('lat')
+  const defaultLng = searchParams.get('lng')
   console.log('New site added')
 
   const createMutation = useCreateMutation()
@@ -118,12 +122,14 @@ function AddSite() {
         <form onSubmit={handleSubmit} autoComplete="off">
           <label htmlFor="latlong">LatLong</label>
           <input
-            value={latlong}
             onChange={handleLatlongChange}
             type="text"
             id="latlong"
             name="latlong"
+            value={`${defaultLat},${defaultLng}`}
+            readOnly
           />
+
           <label htmlFor="address">Address</label>
           <input
             value={address}

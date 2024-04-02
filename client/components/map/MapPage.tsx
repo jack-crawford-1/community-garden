@@ -91,15 +91,16 @@ function MapPage() {
     const popup = L.popup()
 
     function onMapClick(e: { latlng: L.LatLngExpression }) {
-      const content = `<div>You clicked ${e.latlng.toString()}</div><button id="go-to-page">Add Garden Location</button>`
+      const latlng = e.latlng
+      const content = `<div>You clicked ${e.latlng.toString()}</div><button id="go-to-page">Add Garden Site</button>`
 
-      popup.setLatLng(e.latlng).setContent(content).openOn(map)
+      popup.setLatLng(latlng).setContent(content).openOn(map)
 
       setTimeout(() => {
         const goToPageButton = document.getElementById('go-to-page')
         if (goToPageButton) {
           goToPageButton.addEventListener('click', () => {
-            navigate('/addsite/')
+            navigate(`/addsite/?lat=${latlng.lat}&lng=${latlng.lng}`)
           })
         }
       }, 0)

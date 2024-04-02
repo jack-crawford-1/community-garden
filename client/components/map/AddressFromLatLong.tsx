@@ -1,9 +1,10 @@
 import { useQuery } from '@tanstack/react-query'
 import { FetchReverseGeocodeData } from '../../apis/reverseGeocodeData'
+import { useState } from 'react'
 
 export default function Addresses() {
-  const lat = '-41.2238442479912'
-  const lng = '174.82278328785492'
+  const [lat, setLat] = useState('1')
+  const [lng, setLng] = useState('1')
 
   const {
     isLoading,
@@ -25,9 +26,14 @@ export default function Addresses() {
 
   const { road, suburb, city } = address.address || {}
 
+  const handleLatChange = (e) => setLat(e.target.value)
+  const handleLngChange = (e) => setLng(e.target.value)
+
   return (
     <div>
-      <h2>Address Details</h2>
+      <h2>Address Details - Nominatim Reverse Geocoding API</h2>
+      <input value={lat} onChange={handleLatChange} placeholder="Latitude" />
+      <input value={lng} onChange={handleLngChange} placeholder="Longitude" />
       <ul>
         <li>Road: {road}</li>
         <li>Suburb: {suburb}</li>

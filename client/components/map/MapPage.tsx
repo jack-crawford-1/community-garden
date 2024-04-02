@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import L, { polygon } from 'leaflet'
+import Addresses from './AddressFromLatLong'
 
 function MapPage() {
   const navigate = useNavigate()
@@ -93,7 +94,7 @@ function MapPage() {
     function onMapClick(e: { latlng: L.LatLngExpression }) {
       const latlng = e.latlng
 
-      const content = `<div>You clicked ${e.latlng.toString()}</div><button id="go-to-page">Add Garden Site</button>`
+      const content = `<button id="go-to-page">Add Garden</button>`
 
       popup.setLatLng(latlng).setContent(content).openOn(map)
 
@@ -121,13 +122,13 @@ function MapPage() {
   }, [navigate])
 
   return (
-    <div>
-      <div id="map" style={{ height: '700px' }}></div>
-    </div>
+    <>
+      <div>
+        <div id="map" style={{ height: '700px' }}></div>
+      </div>
+      <Addresses />
+    </>
   )
 }
 
 export default MapPage
-function getReverseGeocodingData(lat: any, lng: any) {
-  throw new Error('Function not implemented.')
-}

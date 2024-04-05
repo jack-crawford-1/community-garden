@@ -1,5 +1,5 @@
-import * as db from '../server/db/db.ts'
-import connection from '../server/db/connection'
+import * as db from '../db.ts'
+import connection from '../connection.ts'
 
 const newSite = {
   latlong: '40.30202, 74.003',

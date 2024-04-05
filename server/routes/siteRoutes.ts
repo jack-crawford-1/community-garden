@@ -27,16 +27,19 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
-    const { latlong, address, description } = req.body
-    const newSite = await db.addSite({ latlong, address, description })
+    const newSiteData = req.body
+
+    const newSite = await db.addSite(newSiteData)
     res.json(newSite)
   } catch (error) {
-    console.error('Error when adding a site:', error) // Log the error to the server console
-    res
-      .status(500)
-      .json({ message: 'There was a server error', error: error.message })
+    console.error('Error when adding a site:', error.message)
+    res.status(500).json({
+      message: 'There was a server error',
+      error: error.message,
+    })
   }
 })
+
 router.delete('/:id', async (req, res) => {
   try {
     const id = Number(req.params.id)

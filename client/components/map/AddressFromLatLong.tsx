@@ -1,22 +1,32 @@
 import { useQuery } from '@tanstack/react-query'
 import { FetchReverseGeocodeData } from '../../apis/reverseGeocodeData'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom'
+
+function useQueryParams() {
+  return new URLSearchParams(useLocation().search)
+}
 
 export default function Addresses() {
-  const [lat, setLat] = useState('')
-  const [lng, setLng] = useState('')
+  const queryParams = useQueryParams()
+  const lat = queryParams.get('lat')
+  const lng = queryParams.get('lng')
+  const [address, setAddress] = useState('')
 
-  const {
-    isLoading,
-    isError,
-    data: address,
-    error,
-  } = useQuery({
+  const { isLoading, isError, data, error } = useQuery({
     queryKey: ['reverseGeocode', { lat, lng }],
-    queryFn: () => FetchReverseGeocodeData(lat, lng),
-    enabled: lat !== '' && lng !== '',
+    queryFn: () => FetchReverseGeocodeData(lat ?? '', lng ?? ''),
+    enabled: !!lat && !!lng,
   })
 
+  useEffect(() => {
+    if (data?.address) {
+      const fullAddress = `${data.address.house_number} ${data.address.road}, ${data.address.suburb}, ${data.address.city}, ${data.address.country}`
+      setAddress(fullAddress)
+    } else {
+      setAddress('')
+    }
+  }, [data])
   if (isLoading) {
     return <p>Loading address details...</p>
   }
@@ -25,27 +35,25 @@ export default function Addresses() {
     return <p>Error: {error.message}</p>
   }
 
-  const { house_number, road, suburb, city, country } = address?.address || {}
-
-  const handleLatChange = (e) => setLat(e.target.value)
-  const handleLngChange = (e) => setLng(e.target.value)
+  const { house_number, road, suburb, city, country } =
+    (
+      address as {
+        address?: {
+          house_number?: string
+          road?: string
+          suburb?: string
+          city?: string
+          country?: string
+        }
+      }
+    )?.address || {}
 
   return (
     <div className="address-container">
       <h2>Nominatim Reverse Geocoding API</h2>
       <p>find street address from Latitude and Longitude</p>
-      <input
-        className="address-input"
-        value={lat}
-        onChange={handleLatChange}
-        placeholder="Latitude"
-      />
-      <input
-        className="address-input"
-        value={lng}
-        onChange={handleLngChange}
-        placeholder="Longitude"
-      />
+      <input className="address-input" value={lat} placeholder="Latitude" />
+      <input className="address-input" value={lng} placeholder="Longitude" />
       <p>Street Address:</p>
       <p className="address-result">
         {house_number} {road}, {suburb}, {city}, {country}

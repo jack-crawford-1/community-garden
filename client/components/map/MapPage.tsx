@@ -125,8 +125,8 @@ function MapPage() {
     <>
       <div>
         <div id="map" style={{ height: '700px' }}></div>
+        <Addresses />
       </div>
-      <Addresses />
     </>
   )
 }

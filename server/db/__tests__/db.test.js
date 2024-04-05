@@ -55,13 +55,13 @@ describe('getAllUsers', () => {
 describe('getUserById', () => {
   it('should show a single user by ID', async () => {
     const user = await db.getUserById(1)
-    expect(user).toBeDefined()
     expect(user.id).toBe(1)
+    expect(user).toHaveProperty('id')
     expect(user).toHaveProperty('name')
   })
 })
 
-describe('addUser', async () => {
+describe('addUser', () => {
   it('should add a user', async () => {
     const addedUser = await db.addUser(newUser)
     expect(addedUser).toBeInstanceOf(Array)
@@ -78,7 +78,7 @@ describe('deleteUser', () => {
   })
 })
 
-describe('getCouncils', async () => {
+describe('getCouncils', () => {
   it('should get all councils', async () => {
     const councils = await db.getCouncils()
     expect(councils).toHaveLength(3)
@@ -86,7 +86,7 @@ describe('getCouncils', async () => {
   })
 })
 
-describe('getCouncilById', async () => {
+describe('getCouncilById', () => {
   it('should get a single council', async () => {
     const council = await db.getCouncilById(1)
     expect(council.id).toBe(1)
@@ -94,7 +94,7 @@ describe('getCouncilById', async () => {
   })
 })
 
-describe('getSites', async () => {
+describe('getSites', () => {
   it('should get all sites', async () => {
     const sites = await db.getAllSites()
     expect(sites).toHaveLength(7)
@@ -102,7 +102,7 @@ describe('getSites', async () => {
   })
 })
 
-describe('getSiteById', async () => {
+describe('getSiteById', () => {
   it('should get a single site', async () => {
     const site = await db.getSiteById(1)
     expect(site.id).toBe(1)
@@ -111,7 +111,7 @@ describe('getSiteById', async () => {
   })
 })
 
-describe('addSite', async () => {
+describe('addSite', () => {
   it('should add a site', async () => {
     const addedSites = await db.addSite(newSite)
     expect(addedSites).toBeInstanceOf(Array)

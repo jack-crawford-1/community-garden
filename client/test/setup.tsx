@@ -4,14 +4,19 @@ import userEvent from '@testing-library/user-event'
 import * as matchers from '@testing-library/jest-dom/matchers'
 import '@testing-library/jest-dom/vitest'
 import { RouterProvider, createMemoryRouter } from 'react-router-dom'
+// import { routes } from '../router'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import AllUsers from '../components/users/AllUsers'
+import { InitialEntry } from '@remix-run/router'
 
 beforeEach(cleanup)
 expect.extend(matchers)
 
-export function renderRoute(location: string) {
+const routes = [{ path: '/users/:id', element: <AllUsers /> }]
+
+export function renderRoute(route: InitialEntry) {
   const router = createMemoryRouter(routes, {
-    initialEntries: [location],
+    initialEntries: [route],
   })
 
   const queryClient = new QueryClient({

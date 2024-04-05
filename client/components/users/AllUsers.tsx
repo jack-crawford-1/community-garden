@@ -36,11 +36,6 @@ function AllUsers() {
             <th>ID</th>
             <th>Name</th>
             <th>Username</th>
-            <th>Email</th>
-            <th>Password</th>
-            <th>Location</th>
-            <th>Created At</th>
-            <th>Updated At</th>
             <th>Delete</th>
           </tr>
         </thead>
@@ -48,16 +43,12 @@ function AllUsers() {
           {data &&
             data.map((user) => (
               <tr key={user.id}>
+                <td>{user.id}</td>
                 <td>
-                  <Link to={`/users/${user.id}`}>{user.id}</Link>
+                  <Link to={`/users/${user.id}`}>{user.name}</Link>
                 </td>
-                <td>{user.name}</td>
                 <td>{user.userName}</td>
-                <td>{user.email}</td>
-                <td>{user.password}</td>
-                <td>{user.location}</td>
-                <td>{user.createdAt}</td>
-                <td>{user.updatedAt}</td>
+
                 <td>
                   <button
                     onClick={() => handleDelete(user.id)}

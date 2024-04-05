@@ -142,7 +142,8 @@ html, body {
 }
 
 .site-card-container {
-  max-width: 700px;
+ width: 600px;
+  
   height: 470px;
   background: #fff;
   padding: 2rem;
@@ -154,7 +155,8 @@ html, body {
   margin-bottom: 0.5rem;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  margin-left: 15px;
+
 }
 
 
@@ -291,4 +293,59 @@ html, body {
     font-size: 1.3rem;
    font-weight:  bold;
   }
+
+  .single-user-page {
+    justify-content: space-evenly;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .user-title {
+    text-align: center;
+  }
+
+  .user-profile {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto;
+  }
   
+  .user-card-container {
+    width: 450px;
+    height: 200px;
+    margin: 20px;
+    background: #fff;
+    text-align: start;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px #00000033;
+  }
+  
+  .user-card-detail {
+    margin-bottom: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .user-image {
+    max-width: 200px;
+    background: #fff;
+    margin: 20px;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px #00000033;
+  }
+  
+  .site-card-container span {
+    color: red;
+    font-weight: bold;
+    
+  }
+
+  .user-detail span {
+    font-weight: bold;
+    justify-content: space-between;
+  }

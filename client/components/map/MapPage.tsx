@@ -1,27 +1,40 @@
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import L, { polygon } from 'leaflet'
-import Addresses from './AddressFromLatLong'
 
 function MapPage() {
   const navigate = useNavigate()
 
-  // add new layer as const under below two and then call in OverLayers further down
   useEffect(() => {
     const map = L.map('map').setView([-41.279519, 174.780011], 15)
 
-    const customIconProposedGarden = L.icon({
+    const ProposedGardenIcon = L.icon({
       iconUrl:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjehet-5HTJwndzHzDbUgK15eYliTmlwJmPg&usqp=CAU',
+        'https://e7.pngegg.com/pngimages/371/179/png-clipart-gardening-computer-icons-landscaping-garden-design-written-miscellaneous-leaf.png',
       iconSize: [38, 38],
       iconAnchor: [22, 94],
       popupAnchor: [-3, -76],
     })
-    const landmarkLayer = L.marker([-41.279519, 174.780011], {
-      icon: customIconProposedGarden,
+    const proposed1 = L.marker([-41.265706, 174.780039], {
+      icon: ProposedGardenIcon,
+    }).bindPopup('Wadestown site')
+
+    proposed1.on('click', () => {
+      navigate('/sites/1')
+    })
+
+    const proposed2 = L.marker([-41.266945, 174.911542], {
+      icon: ProposedGardenIcon,
     }).bindPopup('Seasonal Public Garden')
 
-    const customIcon = L.icon({
+    const proposed3 = L.marker([-41.251501, 174.912802], {
+      icon: ProposedGardenIcon,
+    }).bindPopup('Seasonal Public Garden')
+
+    const proposed4 = L.marker([-41.238656, 174.787022], {
+      icon: ProposedGardenIcon,
+    }).bindPopup('Seasonal Public Garden')
+
+    const compostIcon = L.icon({
       iconUrl: 'https://cdn-icons-png.flaticon.com/512/6593/6593775.png',
       iconSize: [38, 38],
       iconAnchor: [22, 94],
@@ -29,34 +42,44 @@ function MapPage() {
     })
 
     const compost1 = L.marker([-41.306229, 174.779469], {
-      icon: customIcon,
+      icon: compostIcon,
     }).bindPopup('Compost Drop Off point')
 
     const compost2 = L.marker([-41.299014, 174.75938], {
-      icon: customIcon,
+      icon: compostIcon,
     }).bindPopup('Compost Drop Off point')
 
     const compost3 = L.marker([-41.239762, 174.782642], {
-      icon: customIcon,
+      icon: compostIcon,
     }).bindPopup('Compost Drop Off point')
 
     const compost4 = L.marker([-41.220487, 174.860075], {
-      icon: customIcon,
+      icon: compostIcon,
     }).bindPopup('Compost Drop Off point')
 
-    // Placeholder location to show polygon on the map
-    // shows "const Wadestown" content onClick
-    const WadestownLatlngs: L.LatLngExpression[] = [
-      [-41.265575, 174.780329],
-      [-41.265905, 174.779937],
-      [-41.26571, 174.779892],
-      [-41.265574, 174.780073],
-    ]
-    const Wadestown = L.polygon(WadestownLatlngs, { color: 'blue' }).addTo(map)
-      .bindPopup(`ID: 1 <br/>
-      LatLong: 40.7128,-74.0060 <br/>
-      Address: 12 Barnard St, Wadestown <br/>
-      Description: Community garden in Wadestown <br/>`)
+    const ExistingGardenIcon = L.icon({
+      iconUrl:
+        'https://seewhatgrows.org/wp-content/uploads/2017/10/icon-garden.png',
+      iconSize: [38, 38],
+      iconAnchor: [22, 94],
+      popupAnchor: [-3, -76],
+    })
+
+    const existing1 = L.marker([-41.306229, 174.779469], {
+      icon: ExistingGardenIcon,
+    }).bindPopup('existing1')
+
+    const existing2 = L.marker([-41.298846, 174.790866], {
+      icon: ExistingGardenIcon,
+    }).bindPopup('existing2')
+
+    const existing3 = L.marker([-41.32403, 174.755631], {
+      icon: ExistingGardenIcon,
+    }).bindPopup('existing3')
+
+    const existing4 = L.marker([-41.273493, 174.785527], {
+      icon: ExistingGardenIcon,
+    }).bindPopup('existing4')
 
     // Base layer map
 
@@ -77,13 +100,23 @@ function MapPage() {
       ),
     }
 
-    // created a compost layer so I could show all compost locations under one layer
     const compostLayer = L.layerGroup([compost1, compost2, compost3, compost4])
+    const proposedLayer = L.layerGroup([
+      proposed1,
+      proposed2,
+      proposed3,
+      proposed4,
+    ])
+    const existingLayer = L.layerGroup([
+      existing1,
+      existing2,
+      existing3,
+      existing4,
+    ])
 
-    // Can add more layers
     const overlayLayers = {
-      ExistingSites: Wadestown,
-      ProposedSites: landmarkLayer,
+      ExistingSites: existingLayer,
+      ProposedSites: proposedLayer,
       CompostDrop: compostLayer,
     }
 
@@ -124,8 +157,7 @@ function MapPage() {
   return (
     <>
       <div>
-        <div id="map" style={{ height: '700px' }}></div>
-        <Addresses />
+        <div id="map" style={{ height: '650px' }}></div>
       </div>
     </>
   )

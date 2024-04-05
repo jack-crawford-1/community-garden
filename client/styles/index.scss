@@ -173,20 +173,30 @@ html, body {
   
 }
 
+.home-outer-container {
+  display: flex;
+  justify-content: center;
+  height: 80vh;
+  background-image: url(../public/images/homepage/bg1.jpeg);
+  background-size: cover;
+
+}
 
 .home-container {
     max-width: 700px;
+    height: 100px;
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 2px 5px #00000033;
     margin: 100px auto;
+    background-color: rgba(255, 255, 255, 0.519);
   }
 
   .home-container p {
     font-size: 1.5rem;
-    color: #5e93de;
+    color: #0d3c7f;
     font-weight: bold;
-    padding: 2.5rem 2rem;
+    padding: .5rem;
     
   }
 

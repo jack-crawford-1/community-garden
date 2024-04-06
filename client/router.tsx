@@ -16,6 +16,7 @@ import User from './components/users/User'
 import CouncilById from './components/council/Council'
 import AllCouncils from './components/council/AllCouncils'
 import AddressFromLatLong from '../client/components/map/AddressFromLatLong'
+import Profile from './components/auth/Profile'
 
 const router = createBrowserRouter(
   createRoutesFromElements([
@@ -23,6 +24,7 @@ const router = createBrowserRouter(
       <Route index element={<Home />} />
       <Route path="/users/" element={<AllUsers />} />
       <Route path="/users/:id" element={<User />} />
+      <Route path="profile" element={<Profile />} />,
       <Route path="/adduser/" element={<AddUser />} />
       <Route path="/map/" element={<MapPage />} />
       <Route path="/sites/" element={<AllSites />} />

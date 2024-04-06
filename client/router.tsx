@@ -28,8 +28,9 @@ const router = createBrowserRouter(
       <Route path="/sites/" element={<AllSites />} />
       <Route path="/sites/:id" element={<Site />} />
       <Route path="/addsite/" element={<AddSite />} />
-      <Route path="/councils/" element={<AllCouncils />} />
-      <Route path="/councils/:id" element={<CouncilById />} />
+      <Route path="/councils/" element={<AllCouncils />}>
+        <Route path=":id" element={<CouncilById />} />
+      </Route>
       <Route path="/address/" element={<AddressFromLatLong />} />
     </Route>,
   ]),

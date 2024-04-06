@@ -357,51 +357,49 @@ html, body {
   }
 
 
-  .council-card-container {
-    width: 450px;
-    margin: 20px auto;
-    background: #fff;
-    text-align: start;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px #00000033;
+  // All Councils Page
+  .councils-page-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
   }
+  
 
   .all-council {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin: 0 auto;
+    align-items: center;
+    flex-grow: 1;
+    margin: 10px ;
+    margin-right: 20px;
     padding: 0;
     box-sizing: border-box;
-    width: 30%;
     text-decoration: none;
-    
-    
   }
 
   .all-council-each {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     list-style: none;
     text-decoration: none;
     border-radius: 10px;
     box-shadow: 0 2px 5px #00000033;
-    height: 150px;
+    height: 70px;
+    width: 400px;
     padding: 20px;
     background-color: #fff; 
     margin-bottom: 15px;
   }
-
   
   .all-council-each li {
     text-decoration: none;
     list-style-type: none;
     margin: 5px 0; 
     color: #333; 
-    font-size: 16px;
+    font-size: 18px;
   }
   
   .all-council-each a {
@@ -416,16 +414,32 @@ html, body {
   color: inherit; 
 }
 
-
 .all-council-each:hover { 
   text-decoration: none !important; 
   background-color: #5e93de;
   transition: background-color 0.3s; 
 }
 
-
 .all-council-each:hover li,
 .all-council-each:hover a {
   color: white !important; 
   transition: color 0.3s; 
+}
+
+.council-card-container {
+ display: flex;
+ flex-direction: row;
+ justify-content: center; 
+}
+
+//Single Council tile
+.council-card{
+  width: 550px;
+  margin: 20px auto;
+  margin-right: 100px;
+  text-align: start;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px #00000033;
+  
 }

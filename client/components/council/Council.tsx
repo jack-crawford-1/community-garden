@@ -12,15 +12,17 @@ function CouncilById() {
   if (!council) return <div>Site not found</div>
 
   return (
-    <div className="council-card-container">
-      <div>
-        <h3>{council.name}</h3>
-        <p>ID: {council.id}</p>
-        <p>Email: {council.email}</p>
-        <p>Phone: {council.phone}</p>
-        <p>Address: {council.address}</p>
-        <p>Website: {council.website}</p>
-        <p>Description: {council.description}</p>
+    <div>
+      <div className="council-card">
+        <div>
+          <h3>{council.name}</h3>
+          <p>ID: {council.id}</p>
+          <p>Email: {council.email}</p>
+          <p>Phone: {council.phone}</p>
+          <p>Address: {council.address}</p>
+          <p>Website: {council.website}</p>
+          <p>Description: {council.description}</p>
+        </div>
       </div>
     </div>
   )

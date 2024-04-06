@@ -36,10 +36,7 @@ html, body {
   
 }
 
-.ulh2 {
-  text-align: center;
-  margin: 1rem 0;
-}
+
 
 .user-list th,
 .user-list td {
@@ -142,8 +139,7 @@ html, body {
 }
 
 .site-card-container {
- width: 600px;
-  
+  width: 600px;
   height: 470px;
   background: #fff;
   padding: 2rem;
@@ -359,3 +355,77 @@ html, body {
     font-weight: bold;
     justify-content: space-between;
   }
+
+
+  .council-card-container {
+    width: 450px;
+    margin: 20px auto;
+    background: #fff;
+    text-align: start;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px #00000033;
+  }
+
+  .all-council {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    width: 30%;
+    text-decoration: none;
+    
+    
+  }
+
+  .all-council-each {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    text-decoration: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px #00000033;
+    height: 150px;
+    padding: 20px;
+    background-color: #fff; 
+    margin-bottom: 15px;
+  }
+
+  
+  .all-council-each li {
+    text-decoration: none;
+    list-style-type: none;
+    margin: 5px 0; 
+    color: #333; 
+    font-size: 16px;
+  }
+  
+  .all-council-each a {
+    text-decoration: none;
+    list-style-type: none;
+    color: inherit; 
+    font-weight: bold; 
+  }
+
+  a, a:visited, a:hover, a:active { 
+  text-decoration: none !important; 
+  color: inherit; 
+}
+
+
+.all-council-each:hover { 
+  text-decoration: none !important; 
+  background-color: #5e93de;
+  transition: background-color 0.3s; 
+}
+
+
+.all-council-each:hover li,
+.all-council-each:hover a {
+  color: white !important; 
+  transition: color 0.3s; 
+}

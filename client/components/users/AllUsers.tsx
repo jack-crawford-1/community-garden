@@ -29,7 +29,6 @@ function AllUsers() {
 
   return (
     <div>
-      <h2 className="ulh2">Admin Page: Show all users</h2>
       <table className="user-list">
         <thead>
           <tr>

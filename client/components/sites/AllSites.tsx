@@ -24,7 +24,6 @@ function AllSites() {
 
   return (
     <div>
-      <h2 className="ulh2">Show all Sites</h2>
       <table className="user-list">
         <thead>
           <tr>
@@ -38,10 +37,10 @@ function AllSites() {
           {data &&
             data.map((site) => (
               <tr key={site.id}>
+                <td>{site.id}</td>
                 <td>
-                  <Link to={`/sites/${site.id}`}>{site.id}</Link>
+                  <Link to={`/sites/${site.id}`}>{site.address}</Link>
                 </td>
-                <td>{site.address}</td>
                 <td>{site.description}</td>
                 <td>
                   <button

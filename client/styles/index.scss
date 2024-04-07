@@ -550,8 +550,6 @@ html, body {
   box-sizing: border-box;
 }
 
-
-
 .news-container h2 {
   text-align: center;
   font-weight: 600; 
@@ -587,6 +585,67 @@ html, body {
   font-size: 2.3rem;
   font-weight: 700;
   margin-bottom: 15px;
+}
+
+.stats-nz-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.stats-nz-dataset{
+  max-width: 950px;
+  margin: 20px auto;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px #0000001a;
+  list-style: none;
+}
+
+.stats-nz-container h2 {
+  text-align: center;
+  font-weight: 600; 
+  line-height: 1.6; 
+  letter-spacing: 0.5px;
+  color: #333; 
+  margin-top: 1.5rem; 
+  margin-bottom: 1rem; 
+  font-size: 2rem;
+}
+
+.stats-nz-container h3 {
+  text-align: center;
+  font-weight: 500; 
+  line-height: 1.3; 
+  letter-spacing: 0.5px; 
+  color: #333; 
+  margin-top: 1rem; 
+  margin-bottom: 0.5rem; 
+}
+
+.stats-nz-container h4 {
+  text-align: center;
+  font-weight: 600; 
+  line-height: 1.6; 
+  letter-spacing: 0.5px;
+  color: #333; 
+  margin-top: 1.5rem; 
+  margin-bottom: 1rem; 
+  font-size: 1.7rem;
+}
+
+.stats-nz-container a{
+  color: #3273dc; 
+  text-decoration: none; 
+}
+
+.stats-nz-container a:hover {
+  color: #11469a; 
+  cursor: pointer;  
 }
 
 .author, .date, .url, .tags {

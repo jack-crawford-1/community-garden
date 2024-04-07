@@ -26,11 +26,11 @@ function Nav() {
               Councils
             </NavLink>
           </li>
-          {/* <li>
-            <NavLink className="nav-link" to={'/adduser'}>
-              Register
+          <li>
+            <NavLink className="nav-link" to={'/stats'}>
+              StatsNZ
             </NavLink>
-          </li> */}
+          </li>
           <li>
             <NavLink className="nav-link" to={'/news'}>
               News

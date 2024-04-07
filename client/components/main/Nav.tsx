@@ -22,20 +22,15 @@ function Nav() {
             </NavLink>
           </li>
           <li>
-            <NavLink className="nav-link" to={'/users'}>
-              Users
-            </NavLink>
-          </li>
-          <li>
             <NavLink className="nav-link" to={'/councils'}>
               Councils
             </NavLink>
           </li>
-          <li>
+          {/* <li>
             <NavLink className="nav-link" to={'/adduser'}>
               Register
             </NavLink>
-          </li>
+          </li> */}
           <li>
             <NavLink className="nav-link" to={'/news'}>
               News

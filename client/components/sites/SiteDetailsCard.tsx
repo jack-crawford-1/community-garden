@@ -14,7 +14,8 @@ function SiteDetailsCard() {
     <>
       <div className="site-card-container">
         <div className="site-card-details">
-          <span>ID:</span> <Link to={`/sites/${site.id}`}>{site.id}</Link>
+          <span>ID:</span>
+          {site.id}
         </div>
         <div className="site-card-details">
           <span>LatLong:</span> {site.latlong}
@@ -33,7 +34,7 @@ function SiteDetailsCard() {
 
         <div className="site-card-details">
           <span>User ID:</span>
-          <Link to={`/users/${site.userId}`}>{site.userId}</Link>
+          <Link to={`/profile/${site.userId}`}>{site.userId}</Link>
         </div>
 
         <div className="site-card-details">

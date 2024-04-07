@@ -4,7 +4,7 @@ export interface Sites {
   address: string
   description: string
   councilId: number
-  userId: number
+  userId: string
   isPublic: boolean
   hasWaterAccess: boolean
   isAvailable: boolean
@@ -19,7 +19,7 @@ export interface NewSite {
   address: string
   description: string
   councilId: number
-  userId: number
+  userId: string
   isPublic: boolean
   hasWaterAccess: boolean
   isAvailable: boolean

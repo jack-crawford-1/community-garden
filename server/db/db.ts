@@ -5,22 +5,22 @@ import { Councils } from '../../models/councilsModels.ts'
 
 const db = connection
 
-export const getAllUsers = () => {
-  const allUsers = db<User>('users').select('*')
-  return allUsers
-}
+// export const getAllUsers = () => {
+//   const allUsers = db<User>('users').select('*')
+//   return allUsers
+// }
 
-export const getUserById = async (id: number): Promise<User | undefined> => {
-  return db<User>('users').where('id', id).first()
-}
+// export const getUserById = async (id: number): Promise<User | undefined> => {
+//   return db<User>('users').where('id', id).first()
+// }
 
-export async function addUser(newUser: NewUser): Promise<NewUser[]> {
-  return await db('users').insert(newUser).returning('*')
-}
+// export async function addUser(newUser: NewUser): Promise<NewUser[]> {
+//   return await db('users').insert(newUser).returning('*')
+// }
 
-export async function deleteUser(id: number): Promise<User> {
-  return db('users').where('id', id).del()
-}
+// export async function deleteUser(id: number): Promise<User> {
+//   return db('users').where('id', id).del()
+// }
 
 export const getAllSites = (): Promise<Sites[]> => {
   return db<Sites>('sites').select('*')

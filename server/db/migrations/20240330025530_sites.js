@@ -8,8 +8,8 @@ export async function up(knex) {
     table.string('latlong')
     table.string('address')
     table.string('description')
-    table.integer('councilId').unsigned()
-    table.integer('userId').unsigned()
+    table.integer('councilId')
+    table.string('userId')
     table.boolean('isPublic')
     table.boolean('hasWaterAccess')
     table.boolean('isAvailable')
@@ -17,8 +17,6 @@ export async function up(knex) {
     table.string('soilType')
     table.string('size')
     table.string('accessibility')
-    table.foreign('councilId').references('id').inTable('councils')
-    table.foreign('userId').references('id').inTable('users')
   })
 }
 

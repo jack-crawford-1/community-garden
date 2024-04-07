@@ -33,7 +33,7 @@ const ProfilePage = () => {
           <span>Updated at: </span>
           {user.updated_at}
         </p>
-        {/* <p>Sub: {user.sub}</p> */}
+        <p>Sub: {user.sub}</p>
       </div>
     </div>
   )

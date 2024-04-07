@@ -4,6 +4,7 @@ import { NewSite, Sites } from '../../../models/sitesModels'
 import { useSearchParams } from 'react-router-dom'
 import FetchReverseGeocodeData from '../../apis/reverseGeocodeData'
 import { useCreateMutation } from '../../hooks/useSites'
+import { useAuth0 } from '@auth0/auth0-react'
 
 function useQueryParams() {
   const { search } = useLocation()
@@ -26,30 +27,39 @@ function AddSite() {
     accessibility: '',
   })
 
+  const { user } = useAuth0()
   const searchParams = useQueryParams()
   const defaultLat = searchParams.get('lat')
   const defaultLng = searchParams.get('lng')
 
   useEffect(() => {
-    if (defaultLat && defaultLng) {
-      const latlong = `${defaultLat},${defaultLng}`
-      setForm((currentForm) => ({ ...currentForm, latlong }))
-      FetchReverseGeocodeData(defaultLat, defaultLng)
+    const updateAddress = (lat: string, lng: string) => {
+      FetchReverseGeocodeData(lat, lng)
         .then((data) => {
           const { house_number, road, suburb, city, country } = data.address
           const address = `${house_number} ${road}, ${suburb}, ${city}, ${country}`
           setForm((currentForm) => ({
             ...currentForm,
-            address: data.address
-              ? `${house_number} ${road}, ${suburb}, ${city}, ${country}`
-              : '',
+            address: address,
           }))
         })
         .catch((error) => {
           console.error('Error fetching address:', error)
         })
     }
-  }, [defaultLat, defaultLng])
+    if (user) {
+      setForm((currentForm) => ({
+        ...currentForm,
+        userId: user.sub || '',
+      }))
+    }
+
+    if (defaultLat && defaultLng) {
+      const latlong = `${defaultLat},${defaultLng}`
+      setForm((currentForm) => ({ ...currentForm, latlong }))
+      updateAddress(defaultLat, defaultLng)
+    }
+  }, [user, defaultLat, defaultLng])
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target
@@ -65,7 +75,7 @@ function AddSite() {
       address: form.address,
       description: form.description,
       councilId: parseInt(form.councilId, 10),
-      userId: parseInt(form.userId, 10),
+      userId: form.userId,
       isPublic: form.isPublic === 'true',
       hasWaterAccess: form.hasWaterAccess === 'true',
       isAvailable: form.isAvailable === 'true',
@@ -97,7 +107,6 @@ function AddSite() {
             id="latlong"
             name="latlong"
             value={`${defaultLat},${defaultLng}`}
-            readOnly
           />
 
           <label htmlFor="address">Address</label>
@@ -129,7 +138,7 @@ function AddSite() {
           <input
             value={form.userId}
             onChange={handleInputChange}
-            type="number"
+            type="text"
             id="userId"
             name="userId"
           />

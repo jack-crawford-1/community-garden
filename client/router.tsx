@@ -5,20 +5,18 @@ import {
   Route,
 } from 'react-router-dom'
 import App from '../client/components/main/App'
-import AllUsers from './components/users/AllUsers'
 import Home from './components/main/Home'
 import MapPage from './components/map/MapPage'
-import AddUser from './components/form/AddUser'
 import AllSites from './components/sites/AllSites'
 import AddSite from './components/form/AddSite'
 import Site from './components/sites/Site'
-import User from './components/users/User'
 import CouncilById from './components/council/Council'
 import AllCouncils from './components/council/AllCouncils'
 import AddressFromLatLong from '../client/components/map/AddressFromLatLong'
 import Profile from './components/auth/Profile'
 import ProfileById from './components/auth/ProfileById'
 import WellingtonNewsData from './components/council/WellingtonNewsData'
+import StatsNZData from './components/main/StatsNZData'
 
 const router = createBrowserRouter(
   createRoutesFromElements([
@@ -38,6 +36,7 @@ const router = createBrowserRouter(
       </Route>
       <Route path="/address/" element={<AddressFromLatLong />} />
       <Route path="/news/" element={<WellingtonNewsData />} />
+      <Route path="/stats" element={<StatsNZData />} />
     </Route>,
   ]),
 )

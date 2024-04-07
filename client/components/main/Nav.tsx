@@ -36,6 +36,11 @@ function Nav() {
               Register
             </NavLink>
           </li>
+          <li>
+            <NavLink className="nav-link" to={'/news'}>
+              News
+            </NavLink>
+          </li>
         </ul>
       </div>
     </>

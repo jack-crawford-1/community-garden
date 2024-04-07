@@ -17,6 +17,7 @@ import CouncilById from './components/council/Council'
 import AllCouncils from './components/council/AllCouncils'
 import AddressFromLatLong from '../client/components/map/AddressFromLatLong'
 import Profile from './components/auth/Profile'
+import WellingtonNewsData from './components/council/WellingtonNewsData'
 
 const router = createBrowserRouter(
   createRoutesFromElements([
@@ -34,6 +35,7 @@ const router = createBrowserRouter(
         <Route path=":id" element={<CouncilById />} />
       </Route>
       <Route path="/address/" element={<AddressFromLatLong />} />
+      <Route path="/news/" element={<WellingtonNewsData />} />
     </Route>,
   ]),
 )

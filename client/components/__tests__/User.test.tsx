@@ -1,10 +1,12 @@
 // //@vitest-environment jsdom
 
-import { it, expect } from 'vitest'
-import { renderRoute } from '../../test/setup.tsx'
+import { describe, it, expect, test } from 'vitest'
 import nock from 'nock'
-
-nock.disableNetConnect()
+import { render, screen } from '@testing-library/react'
+import User from '../users/User.tsx'
+import '../../test/setup'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { MemoryRouter, Route, Routes } from 'react-router-dom'
 
 const mockUserData = {
   id: 1,
@@ -17,26 +19,25 @@ const mockUserData = {
   updatedAt: '2021-09-01T00:00:00.000Z',
 }
 
-// it('renders loading state initially', async () => {
-//   const scope = await nock('http://localhost')
-//     .get(`/api/v1/users/1`)
-//     .reply(200, mockUserData)
+describe('User', () => {
+  test('renders loading state initially', async () => {
+    const scope = nock('http://localhost')
+      .get(`/api/v1/users/1`)
+      .reply(200, mockUserData)
 
-//   const { ...screen } = renderRoute('/1')
+    const queryClient = new QueryClient()
 
-//   const loading = await screen.findByText(/Loading.../)
+    render(
+      <QueryClientProvider client={queryClient}>
+        <MemoryRouter initialEntries={['/users/1']}>
+          <Routes>
+            <Route path="/users/:id" element={<User />} />
+          </Routes>
+        </MemoryRouter>
+      </QueryClientProvider>,
+    )
 
-//   expect(loading).toBeVisible()
-// })
-
-it('should show the user has an ID', async () => {
-  const scope = nock('http://localhost')
-    .get(`/api/v1/users/1`)
-    .reply(200, mockUserData)
-
-  const { ...screen } = renderRoute('/1')
-
-  const name = await screen.findByText(/ID/i)
-
-  expect(name).toBeVisible()
+    const loading = await screen.getByText('Loading...')
+    expect(loading).toBeVisible()
+  })
 })

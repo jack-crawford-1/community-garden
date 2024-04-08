@@ -33,8 +33,8 @@ function SiteDetailsCard() {
         </div>
 
         <div className="site-card-details">
-          <span>User ID:</span>
-          <Link to={`/profile/${site.userId}`}>{site.userId}</Link>
+          <span>Added By User:</span>
+          {site.userName}
         </div>
 
         <div className="site-card-details">

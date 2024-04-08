@@ -14,7 +14,6 @@ import CouncilById from './components/council/Council'
 import AllCouncils from './components/council/AllCouncils'
 import AddressFromLatLong from '../client/components/map/AddressFromLatLong'
 import Profile from './components/auth/Profile'
-import ProfileById from './components/auth/ProfileById'
 import WellingtonNewsData from './components/council/WellingtonNewsData'
 import StatsNZData from './components/main/StatsNZData'
 
@@ -26,7 +25,6 @@ const router = createBrowserRouter(
       {/* <Route path="/users/:id" element={<User />} /> */}
       {/* <Route path="/adduser/" element={<AddUser />} /> */}
       <Route path="profile" element={<Profile />} />,
-      <Route path="profile/:id" element={<ProfileById />} />
       <Route path="/map/" element={<MapPage />} />
       <Route path="/sites/" element={<AllSites />} />
       <Route path="/sites/:id" element={<Site />} />

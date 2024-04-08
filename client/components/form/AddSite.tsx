@@ -24,6 +24,8 @@ function AddSite() {
     soilType: '',
     size: '',
     accessibility: '',
+    email: '',
+    userName: '',
   }
   const [successMessage, setSuccessMessage] = useState('')
   const [form, setForm] = useState(initialFormState)
@@ -51,6 +53,8 @@ function AddSite() {
       setForm((currentForm) => ({
         ...currentForm,
         userId: user.sub || '',
+        email: user.email || '',
+        userName: user.name || '',
       }))
     }
 
@@ -83,6 +87,8 @@ function AddSite() {
       soilType: form.soilType,
       size: parseInt(form.size, 10),
       accessibility: form.accessibility,
+      email: form.email,
+      userName: form.userName,
     }
     createMutation.mutate(newSiteData as Sites, {
       onSuccess: () => {

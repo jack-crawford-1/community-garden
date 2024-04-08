@@ -17,6 +17,8 @@ export async function up(knex) {
     table.string('soilType')
     table.string('size')
     table.string('accessibility')
+    table.string('email')
+    table.string('userName')
   })
 }
 

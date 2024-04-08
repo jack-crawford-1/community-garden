@@ -14,6 +14,9 @@ function MapPage() {
       iconAnchor: [22, 94],
       popupAnchor: [-3, -76],
     })
+
+    // Hardcoding location markers - want to add automatically when a user adds a site
+
     const proposed1 = L.marker([-41.265706, 174.780039], {
       icon: ProposedGardenIcon,
     }).bindPopup('Wadestown site')
@@ -157,7 +160,7 @@ function MapPage() {
   return (
     <>
       <div>
-        <div id="map" style={{ height: '650px' }}></div>
+        <div id="map" style={{ height: '850px' }}></div>
       </div>
     </>
   )

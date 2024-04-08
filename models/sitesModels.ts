@@ -12,6 +12,8 @@ export interface Sites {
   soilType: string
   size: number
   accessibility: string
+  email: string
+  userName: string
 }
 
 export interface NewSite {
@@ -27,4 +29,6 @@ export interface NewSite {
   soilType: string
   size: number
   accessibility: string
+  email: string
+  userName: string
 }

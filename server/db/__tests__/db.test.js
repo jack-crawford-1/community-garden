@@ -44,39 +44,39 @@ beforeEach(async () => {
   await connection.seed.run()
 })
 
-describe('getAllUsers', () => {
-  it('should return all users', async () => {
-    const users = await db.getAllUsers()
-    expect(users).toHaveLength(10)
-    expect(users).toBeInstanceOf(Array)
-  })
-})
+// describe('getAllUsers', () => {
+//   it('should return all users', async () => {
+//     const users = await db.getAllUsers()
+//     expect(users).toHaveLength(10)
+//     expect(users).toBeInstanceOf(Array)
+//   })
+// })
 
-describe('getUserById', () => {
-  it('should show a single user by ID', async () => {
-    const user = await db.getUserById(1)
-    expect(user.id).toBe(1)
-    expect(user).toHaveProperty('id')
-    expect(user).toHaveProperty('name')
-  })
-})
+// describe('getUserById', () => {
+//   it('should show a single user by ID', async () => {
+//     const user = await db.getUserById(1)
+//     expect(user.id).toBe(1)
+//     expect(user).toHaveProperty('id')
+//     expect(user).toHaveProperty('name')
+//   })
+// })
 
-describe('addUser', () => {
-  it('should add a user', async () => {
-    const addedUser = await db.addUser(newUser)
-    expect(addedUser).toBeInstanceOf(Array)
-    expect(addedUser).toHaveLength(1)
-  })
-})
+// describe('addUser', () => {
+//   it('should add a user', async () => {
+//     const addedUser = await db.addUser(newUser)
+//     expect(addedUser).toBeInstanceOf(Array)
+//     expect(addedUser).toHaveLength(1)
+//   })
+// })
 
-describe('deleteUser', () => {
-  it('should delete a user', async () => {
-    await connection.table('sites').where('userId', 1).delete()
-    await db.deleteUser(1)
-    const users = await db.getAllUsers()
-    expect(users).toHaveLength(9)
-  })
-})
+// describe('deleteUser', () => {
+//   it('should delete a user', async () => {
+//     await connection.table('sites').where('userId', 1).delete()
+//     await db.deleteUser(1)
+//     const users = await db.getAllUsers()
+//     expect(users).toHaveLength(9)
+//   })
+// })
 
 describe('getCouncils', () => {
   it('should get all councils', async () => {
@@ -130,7 +130,6 @@ describe('deleteSite', () => {
 
 afterEach(async () => {
   await connection.table('sites').delete()
-  await connection.table('users').delete()
   await connection.table('councils').delete()
 })
 

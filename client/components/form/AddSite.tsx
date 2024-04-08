@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { NewSite, Sites } from '../../../models/sitesModels'
-import { useSearchParams } from 'react-router-dom'
 import FetchReverseGeocodeData from '../../apis/reverseGeocodeData'
 import { useCreateMutation } from '../../hooks/useSites'
 import { useAuth0 } from '@auth0/auth0-react'
@@ -12,7 +11,7 @@ function useQueryParams() {
 }
 
 function AddSite() {
-  const [form, setForm] = useState({
+  const initialFormState = {
     latlong: '',
     address: ' ',
     description: '',
@@ -25,8 +24,9 @@ function AddSite() {
     soilType: '',
     size: '',
     accessibility: '',
-  })
-
+  }
+  const [successMessage, setSuccessMessage] = useState('')
+  const [form, setForm] = useState(initialFormState)
   const { user } = useAuth0()
   const searchParams = useQueryParams()
   const defaultLat = searchParams.get('lat')
@@ -87,6 +87,8 @@ function AddSite() {
     createMutation.mutate(newSiteData as Sites, {
       onSuccess: () => {
         console.log('New site added successfully')
+        setSuccessMessage('New Site added')
+        setForm(initialFormState)
       },
       onError: (error) => {
         console.error('Error adding new site:', error)
@@ -98,9 +100,9 @@ function AddSite() {
     <div>
       <div className="add-user-container">
         <h2>Add Location</h2>
+
         <form onSubmit={handleSubmit} autoComplete="off">
           <label htmlFor="latlong">LatLong</label>
-
           <input
             onChange={handleInputChange}
             type="text"
@@ -202,6 +204,7 @@ function AddSite() {
           <button type="submit">Add New Location</button>
         </form>
       </div>
+      {successMessage && <p>{successMessage}</p>}
       <Link to={'/'}>Home</Link>
     </div>
   )

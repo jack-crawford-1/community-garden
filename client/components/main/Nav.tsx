@@ -27,11 +27,6 @@ function Nav() {
             </NavLink>
           </li>
           <li>
-            <NavLink className="nav-link" to={'/stats'}>
-              StatsNZ
-            </NavLink>
-          </li>
-          <li>
             <NavLink className="nav-link" to={'/news'}>
               News
             </NavLink>

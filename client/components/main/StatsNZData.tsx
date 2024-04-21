@@ -23,7 +23,7 @@ function StatsNZData() {
       method: 'GET',
       headers: {
         'Cache-Control': 'no-cache',
-        'Ocp-Apim-Subscription-Key': '4a6a208016944479be44a5afde41573b',
+        'Ocp-Apim-Subscription-Key': 'xx',
       },
     })
       .then((response) => {

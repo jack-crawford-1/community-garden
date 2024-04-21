@@ -21,9 +21,6 @@ const router = createBrowserRouter(
   createRoutesFromElements([
     <Route path="/" element={<App />}>
       <Route index element={<Home />} />
-      {/* <Route path="/users/" element={<AllUsers />} /> */}
-      {/* <Route path="/users/:id" element={<User />} /> */}
-      {/* <Route path="/adduser/" element={<AddUser />} /> */}
       <Route path="profile" element={<Profile />} />,
       <Route path="/map/" element={<MapPage />} />
       <Route path="/sites/" element={<AllSites />} />
@@ -34,7 +31,7 @@ const router = createBrowserRouter(
       </Route>
       <Route path="/address/" element={<AddressFromLatLong />} />
       <Route path="/news/" element={<WellingtonNewsData />} />
-      <Route path="/stats" element={<StatsNZData />} />
+      {/* <Route path="/stats" element={<StatsNZData />} /> */}
     </Route>,
   ]),
 )

@@ -15,7 +15,7 @@ import AllCouncils from './components/council/AllCouncils'
 import AddressFromLatLong from '../client/components/map/AddressFromLatLong'
 import Profile from './components/auth/Profile'
 import WellingtonNewsData from './components/council/WellingtonNewsData'
-import StatsNZData from './components/main/StatsNZData'
+import UploadImages from './components/form/UploadImages'
 
 const router = createBrowserRouter(
   createRoutesFromElements([
@@ -31,7 +31,7 @@ const router = createBrowserRouter(
       </Route>
       <Route path="/address/" element={<AddressFromLatLong />} />
       <Route path="/news/" element={<WellingtonNewsData />} />
-      {/* <Route path="/stats" element={<StatsNZData />} /> */}
+      <Route path="/UploadImages" element={<UploadImages />} />
     </Route>,
   ]),
 )

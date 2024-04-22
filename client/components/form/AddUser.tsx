@@ -1,8 +1,6 @@
 import { useState } from 'react'
 import { User } from '../../../models/userModels'
 import { useCreateMutation } from '../../hooks/useUsers'
-import { useQueryClient } from 'react-query'
-import { Link } from 'react-router-dom'
 
 function AddUser() {
   const [name, setName] = useState('')

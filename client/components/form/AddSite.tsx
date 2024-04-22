@@ -4,6 +4,7 @@ import { NewSite, Sites } from '../../../models/sitesModels'
 import FetchReverseGeocodeData from '../../apis/reverseGeocodeData'
 import { useCreateMutation } from '../../hooks/useSites'
 import { useAuth0 } from '@auth0/auth0-react'
+import UploadImages from './UploadImages'
 
 function useQueryParams() {
   const { search } = useLocation()
@@ -207,6 +208,9 @@ function AddSite() {
             id="accessibility"
             name="accessibility"
           />
+
+          <UploadImages />
+
           <button type="submit">Add New Location</button>
         </form>
       </div>

@@ -23,8 +23,8 @@ function AllSites() {
   if (isError) return <div>Error: {error.message}</div>
 
   return (
-    <div>
-      <table className="user-list">
+    <div className="all-sites">
+      <table className="sites-list">
         <thead>
           <tr>
             <th>ID</th>

@@ -11,6 +11,7 @@ function AllCouncils() {
 
   return (
     <div className="councils-page-container">
+      <h1>Councils</h1>
       <div className="all-council">
         {data &&
           data.map((council) => (

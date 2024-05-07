@@ -10,11 +10,6 @@ function Nav() {
               Home
             </NavLink>
           </li>
-          <li>
-            <NavLink className="nav-link" to={'/about'}>
-              About
-            </NavLink>
-          </li>
 
           <li>
             <NavLink className="nav-link" to={'/map'}>
@@ -31,11 +26,11 @@ function Nav() {
               Councils
             </NavLink>
           </li>
-          <li>
+          {/* <li>
             <NavLink className="nav-link" to={'/news'}>
               News
             </NavLink>
-          </li>
+          </li> */}
         </ul>
       </div>
     </>

@@ -701,13 +701,15 @@ html, body {
 .about-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: left;
   margin: 0 auto;
-  padding: 3rem;
+  padding: 2rem;
   line-height: 2rem;
   font-family: monospace;
   background-color: #3777e7;
   opacity: .8;
+  min-height: 90vh;
 }
 
 .about-purpose,
